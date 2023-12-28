@@ -4,10 +4,10 @@ import MainDisplay from "./Components/MainDisplay";
 
 const Display = () => {
   return (
-    <div className="bg-red-200 h-[655px]">
-      <div className="container mx-auto flex flex-col items-center justify-between text-black">
-        <SearchBox></SearchBox>
-        <MainDisplay></MainDisplay>
+    <div className="bg-red-200 min-h-screen pb-24">
+      <div className="container mx-auto flex flex-col items-center justify-between text-black flex-grow">
+        <SearchBox />
+        <MainDisplay />
       </div>
     </div>
   );
