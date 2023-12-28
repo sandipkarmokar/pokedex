@@ -9,7 +9,10 @@ const PokemonCard = ({ name, url, index }) => {
   const capitalizedWord = capitalizeFirstLetter(name);
 
   return (
-    <div className="relative h-72 w-72 bg-red-300 rounded-3xl shadow-lg">
+    <div className="relative cursor-pointer h-72 w-72 bg-red-300 rounded-3xl shadow-lg overflow-hidden">
+      <div className="absolute top-0 right-0 m-4 text-[48px] text-right text-white rounded-2xl ">
+        #{index}
+      </div>
       <div className="flex justify-center mt-6">
         {/* <Image
           src={IMAGE_URL}

@@ -66,7 +66,7 @@ const MainDisplay = () => {
   }, [next, loading]);
 
   return (
-    <div className="mt-24 grid grid-cols-4 gap-12">
+    <div className="mt-14 grid grid-cols-4 gap-12">
       {pokemonList.map(({ name, url }, index) => {
         return (
           <PokemonCard key={name} name={name} url={url} index={index + 1} />
