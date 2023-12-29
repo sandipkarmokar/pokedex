@@ -11,6 +11,8 @@ const MainDisplay = () => {
 
   const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
 
+  const ALL_URL = `https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
