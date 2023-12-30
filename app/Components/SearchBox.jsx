@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 const SearchBox = () => {
   const [pokemonName, setPokemonName] = useState("");
@@ -14,7 +15,6 @@ const SearchBox = () => {
       try {
         const response = await axios.get(ALL_URL);
         setAllPokemonList(response.data.results);
-        console.log("allPokemonList:", response.data.results);
       } catch (error) {
         console.error("There had been a mistake", error);
       }
@@ -64,7 +64,7 @@ const SearchBox = () => {
               className="p-4 pl-8 cursor-pointer text-[18px] text-left hover:bg-red-200 hover:rounded-lg"
               key={index}
             >
-              {suggestion.name}{" "}
+              {suggestion.name}
             </li>
           ))}
         </ul>
