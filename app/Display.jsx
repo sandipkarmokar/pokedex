@@ -1,6 +1,6 @@
 import React from "react";
-import SearchBox from "./Components/SearchBox";
-import MainDisplay from "./Components/MainDisplay";
+import SearchBox from "./(Components)/SearchBox";
+import MainDisplay from "./(Components)/MainDisplay";
 
 const Display = () => {
   return (
