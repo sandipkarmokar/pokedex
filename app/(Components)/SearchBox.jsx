@@ -40,10 +40,10 @@ const SearchBox = () => {
   };
   return (
     <div className="w-full relative">
-      <form action="" className="mt-16  shadow-xl">
+      <form className="sm:mt-16 mt-8 sm:mx-0 mx-8 shadow-xl">
         <input
           type="text"
-          className="p-6 w-9/12 text-[24px] rounded-l-xl"
+          className="sm:p-6 p-2 sm:w-9/12 w-2/3 sm:text-[24px] text-[16px] sm:rounded-l-xl rounded-l-md"
           placeholder="Search for any pokemon..."
           value={pokemonName}
           onChange={(event) => {
@@ -52,17 +52,17 @@ const SearchBox = () => {
         />
         <button
           onClick={handleSubmit}
-          className="p-6 w-3/12 text-white bg-red-600 text-[24px] rounded-r-xl shadow-xl"
+          className="sm:p-6 p-2 sm:w-3/12 w-1/3 text-white bg-red-600  sm:text-[24px] text-[16px] sm:rounded-r-xl rounded-r-md shadow-xl"
         >
           Go For It
         </button>
       </form>
-      <div className="rounded-lg">
-        <ul className="w-full mt-4 absolute z-10 rounded-lg h-auto bg-red-100 ">
+      <div className="rounded-lg mx-8 sm:mx-0 relative">
+        <ul className="w-full absolute sm:mt-4 mt-2 z-10 rounded-lg h-auto bg-red-100 left-0 right-0">
           {searchSuggestion.slice(0, 5).map((suggestion, index) => (
             <Link key={suggestion.name} href={`./Pokemon/${suggestion.name}`}>
               <li
-                className="p-4 pl-8 cursor-pointer text-[18px] text-left hover:bg-red-200 hover:rounded-lg"
+                className="sm:p-4 p-4 sm:pl-8 pl-4 cursor-pointer sm:text-[18px] text-[14px] text-left hover:bg-red-200 hover:rounded-lg"
                 key={index}
               >
                 {suggestion.name}

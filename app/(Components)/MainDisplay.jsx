@@ -69,7 +69,7 @@ const MainDisplay = () => {
   }, [next, loading]);
 
   return (
-    <div className="mt-14 grid grid-cols-4 gap-12">
+    <div className="sm:mt-14 mt-10 grid sm:grid-cols-4 grid-cols-2 sm:gap-12 gap-4 sm:mx-0 mx-8">
       {pokemonList.map(({ name, url }, index) => {
         return (
           <Link key={name} href={`./Pokemon/${name}`}>

@@ -44,7 +44,7 @@ const Page = ({ params }) => {
 
   return (
     <div className="w-full h-screen bg-red-600">
-      <div className="container mx-auto pt-14 w-1/3">
+      <div className="container mx-auto pt-14 sm:w-1/3 w-10/12">
         <div className="bg-red-500 shadow-2xl rounded-2xl p-12">
           <div className="flex flex-col items-center">
             <img
@@ -54,7 +54,9 @@ const Page = ({ params }) => {
             />
           </div>
           <div className="flex mt-8 items-center">
-            <p className="text-[40px] pr-6 ">{params.pokemonName}</p>
+            <p className="sm:text-[40px] text-[26px] sm:pr-6 pr-4">
+              {params.pokemonName}
+            </p>
             <div className="flex">
               {pokemonInfo.types?.map((type) => (
                 <PokemonTypeComponent key={type.slot}>
@@ -64,7 +66,7 @@ const Page = ({ params }) => {
               ))}
             </div>
           </div>
-          <div className="mt-4 text-[18px]">
+          <div className="mt-4 sm:text-[18px] text-[14px]">
             <p>Abilities : </p>
             <div className="flex flex-wrap text-[22px]">
               {pokemonInfo.abilities?.map((ability) => (
@@ -74,13 +76,13 @@ const Page = ({ params }) => {
               ))}
             </div>
           </div>
-          <div className="mt-4 text-[18px]">
+          <div className="mt-4 sm:text-[18px] text-[14px]">
             <p>height : </p>
-            <p className="text-[22px]">{pokemonInfo.height}</p>
+            <p className="sm:text-[22px] text-[18px]">{pokemonInfo.height}</p>
           </div>
-          <div className="mt-4 text-[18px]">
+          <div className="mt-4 sm:text-[18px] text-[14px]">
             <p>Moves : </p>
-            <div className="flex flex-wrap text-[22px]">
+            <div className="flex flex-wrap sm:text-[22px] text-[18px]">
               {pokemonInfo.moves?.slice(0, 5).map((move) => (
                 <p key={move.move.name} className="pr-3">
                   {move.move.name}{" "}
