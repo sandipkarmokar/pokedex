@@ -5,29 +5,53 @@ import PokemonTypeComponent from "../../PokemonTypeComponent";
 
 const Page = ({ params }) => {
   const [pokemonInfo, setPokemonInfo] = useState([]);
+  const [pokemonNumber, setPokemonNumber] = useState(0);
 
   const POKEMON_URL = `https://pokeapi.co/api/v2/pokemon/`;
-  const IMAGE_URL = `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/1.svg`;
+  const IMAGE_URL = `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/`;
+  const [allPokemonList, setAllPokemonList] = useState([]);
+
+  const ALL_URL = `https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`;
+
+  useEffect(() => {
+    const fetchAllPokemon = async () => {
+      try {
+        const response = await axios.get(ALL_URL);
+        setAllPokemonList(response.data.results);
+      } catch (error) {
+        console.error("There had been a mistake", error);
+      }
+    };
+    fetchAllPokemon();
+  }, []);
 
   useEffect(() => {
     const fetchPokemonInfo = async () => {
       try {
         const response = await axios.get(`${POKEMON_URL}${params.pokemonName}`);
         setPokemonInfo(response.data);
+        const index = allPokemonList.findIndex(
+          (pokemon) => pokemon.name === params.pokemonName
+        );
+        setPokemonNumber(index + 1);
       } catch (error) {
         console.error("Oops", error);
       }
     };
 
     fetchPokemonInfo();
-  }, [params.pokemonName]);
+  }, [params.pokemonName, allPokemonList]);
 
   return (
     <div className="w-full h-screen bg-red-600">
       <div className="container mx-auto pt-14 w-1/3">
         <div className="bg-red-500 shadow-2xl rounded-2xl p-12">
           <div className="flex flex-col items-center">
-            <img src={IMAGE_URL} alt="" className="h-48 mb-4" />
+            <img
+              src={`${IMAGE_URL}${pokemonNumber}.svg`}
+              alt=""
+              className="h-48 mb-4"
+            />
           </div>
           <div className="flex mt-8 items-center">
             <p className="text-[40px] pr-6 ">{params.pokemonName}</p>
@@ -52,7 +76,6 @@ const Page = ({ params }) => {
           </div>
           <div className="mt-4 text-[18px]">
             <p>height : </p>
-
             <p className="text-[22px]">{pokemonInfo.height}</p>
           </div>
           <div className="mt-4 text-[18px]">
