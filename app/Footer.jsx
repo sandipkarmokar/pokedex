@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="bg-red-900">
       <div className="container mx-auto flex items-center justify-center text-center p-10">
         <div>
-          <p className="text-[20px] text-red-100">
+          <p className="sm:text-[20px] text-[14px] text-red-100">
             Coded with 💓💞💖 by{" "}
             <a
               rel="noopener noreferrer"
