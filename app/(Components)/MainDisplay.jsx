@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import PokemonCard from "./PokemonCard";
+import Link from "next/link";
 import axios from "axios";
 
 const MainDisplay = () => {
@@ -71,7 +72,9 @@ const MainDisplay = () => {
     <div className="mt-14 grid grid-cols-4 gap-12">
       {pokemonList.map(({ name, url }, index) => {
         return (
-          <PokemonCard key={name} name={name} url={url} index={index + 1} />
+          <Link key={name} href={`./Pokemon/${name}`}>
+            <PokemonCard name={name} url={url} index={index + 1} />
+          </Link>
         );
       })}
       <div id="sentinel" style={{ height: "1px", width: "1px" }}></div>

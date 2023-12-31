@@ -60,12 +60,14 @@ const SearchBox = () => {
       <div className="rounded-lg">
         <ul className="w-full mt-4 absolute z-10 rounded-lg h-auto bg-red-100 ">
           {searchSuggestion.slice(0, 5).map((suggestion, index) => (
-            <li
-              className="p-4 pl-8 cursor-pointer text-[18px] text-left hover:bg-red-200 hover:rounded-lg"
-              key={index}
-            >
-              {suggestion.name}
-            </li>
+            <Link key={suggestion.name} href={`./Pokemon/${suggestion.name}`}>
+              <li
+                className="p-4 pl-8 cursor-pointer text-[18px] text-left hover:bg-red-200 hover:rounded-lg"
+                key={index}
+              >
+                {suggestion.name}
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
