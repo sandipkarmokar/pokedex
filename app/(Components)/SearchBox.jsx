@@ -62,7 +62,7 @@ const SearchBox = () => {
           {searchSuggestion.slice(0, 5).map((suggestion, index) => (
             <Link key={suggestion.name} href={`./Pokemon/${suggestion.name}`}>
               <li
-                className="sm:p-4 p-4 sm:pl-8 pl-4 cursor-pointer sm:text-[18px] text-[14px] text-left hover:bg-red-200 hover:rounded-lg"
+                className="sm:p-4 p-3 sm:pl-8 pl-4 cursor-pointer sm:text-[18px] text-[14px] text-left hover:bg-red-200 hover:rounded-lg"
                 key={index}
               >
                 {suggestion.name}

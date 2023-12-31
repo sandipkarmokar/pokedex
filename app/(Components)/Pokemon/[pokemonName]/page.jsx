@@ -45,7 +45,7 @@ const Page = ({ params }) => {
   return (
     <div className="w-full h-screen bg-red-600">
       <div className="container mx-auto sm:pt-14 pt-20 sm:w-1/3 w-10/12">
-        <div className="bg-red-500 shadow-2xl rounded-2xl p-12">
+        <div className="bg-red-500 shadow-2xl rounded-2xl sm:p-12 p-8">
           <div className="flex flex-col items-center">
             <img
               src={`${IMAGE_URL}${pokemonNumber}.svg`}
