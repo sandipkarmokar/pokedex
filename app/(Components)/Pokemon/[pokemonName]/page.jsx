@@ -68,7 +68,7 @@ const Page = ({ params }) => {
           </div>
           <div className="mt-4 sm:text-[18px] text-[14px]">
             <p>Abilities : </p>
-            <div className="flex flex-wrap text-[22px]">
+            <div className="flex flex-wrap sm:text-[22px] text-[18px]">
               {pokemonInfo.abilities?.map((ability) => (
                 <p key={ability.ability.slot} className="pr-3">
                   {ability.ability.name}{" "}
