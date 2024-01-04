@@ -13,7 +13,7 @@ const Navbar = () => {
             width={44}
             height={44}
             alt="pokeball img"
-            className="sm:mr-6 mr-2"
+            className="sm:mr-4 mr-2"
           ></Image>
           <p className="sm:text-[40px] text-[24px] text-red-400 font-bold">
             Pokedex
@@ -25,7 +25,7 @@ const Navbar = () => {
             width={44}
             height={44}
             alt="github"
-            // className="sm:mr-6 mr-2"
+            className="cursor-pointer"
           ></Image>
         </div>
       </div>
