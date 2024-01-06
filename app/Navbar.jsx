@@ -20,13 +20,19 @@ const Navbar = () => {
           </p>
         </div>
         <div>
-          <Image
-            src="/github.svg"
-            width={44}
-            height={44}
-            alt="github"
-            className="cursor-pointer"
-          ></Image>
+          <a
+            href="https://github.com/sandipkarmokar/pokedex"
+            target="blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/github.svg"
+              width={44}
+              height={44}
+              alt="github"
+              className="cursor-pointer"
+            ></Image>
+          </a>
         </div>
       </div>
     </div>
